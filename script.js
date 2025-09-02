@@ -46,12 +46,26 @@
     if (flipBtn) {
       flipBtn.addEventListener('click', function () {
         card.classList.add('flipped');
+        
+        // Trigger fun facts animation after a short delay
+        setTimeout(function() {
+          var funFacts = document.querySelector('.fun-facts');
+          if (funFacts) {
+            funFacts.classList.add('animate');
+          }
+        }, 300);
       });
     }
 
     if (backBtn) {
       backBtn.addEventListener('click', function () {
         card.classList.remove('flipped');
+        
+        // Reset fun facts animation
+        var funFacts = document.querySelector('.fun-facts');
+        if (funFacts) {
+          funFacts.classList.remove('animate');
+        }
       });
     }
 
